@@ -6,9 +6,23 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="background">
+<ion-list no-lines>
+  <ion-list-header>
+    Codetrbe curriculum
+  </ion-list-header>
+  <button ion-item *ngFor='let course of arrayCourses' (click)="list(course)">
+    <ion-icon name="{{course.icon}}" item-left ></ion-icon>
+    <h2>{{course.title}}</h2>
+    <h3>Duration:{{course.weeks}}weeks</h3>
+    <div  *ngFor='let lessons of course.lessons'>
+      <p>Lesson{{lessons.number}} {{lessons.title}}</p>
+    </div>
+    
+  </button>
+  
+
+
+</ion-list>
+
 </ion-content>
